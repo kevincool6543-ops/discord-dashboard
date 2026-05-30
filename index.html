@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Discord Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">⚙️ MyBot</div>
+    <nav>
+      <a href="#" class="active">📊 Overview</a>
+      <a href="#">👥 Members</a>
+      <a href="#">🤖 Bot Controls</a>
+      <a href="#">🛡️ Moderation</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main">
+
+    <!-- Stats Cards -->
+    <h2>Server Overview</h2>
+    <div class="cards">
+      <div class="card">👥 <strong>1,240</strong><span>Members</span></div>
+      <div class="card">🟢 <strong>342</strong><span>Online</span></div>
+      <div class="card">💬 <strong>89</strong><span>Messages Today</span></div>
+      <div class="card">🚫 <strong>3</strong><span>Bans This Week</span></div>
+    </div>
+
+    <!-- Member List -->
+    <h2>Recent Members</h2>
+    <table>
+      <thead>
+        <tr><th>Username</th><th>Role</th><th>Status</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>cooluser#1234</td><td>Member</td><td class="online">Online</td></tr>
+        <tr><td>modguy#5678</td><td>Moderator</td><td class="online">Online</td></tr>
+        <tr><td>newbie#0001</td><td>Member</td><td class="offline">Offline</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Bot Controls -->
+    <h2>Bot Controls</h2>
+    <div class="controls">
+      <button onclick="sendCommand('!ban')">🔨 Ban User</button>
+      <button onclick="sendCommand('!mute')">🔇 Mute User</button>
+      <button onclick="sendCommand('!clear')">🧹 Clear Chat</button>
+      <button onclick="sendCommand('!announce')">📢 Announce</button>
+    </div>
+    <p id="bot-output"></p>
+
+    <!-- Moderation Log -->
+    <h2>Moderation Log</h2>
+    <ul class="mod-log">
+      <li>🔨 <strong>modguy</strong> banned <strong>spammer#999</strong> – Spam</li>
+      <li>🔇 <strong>modguy</strong> muted <strong>troll#111</strong> – Harassment</li>
+      <li>🧹 <strong>bot</strong> cleared 50 messages in #general</li>
+    </ul>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
