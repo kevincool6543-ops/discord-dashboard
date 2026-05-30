@@ -1,6 +1,5 @@
-// Fetch server stats
 async function loadStats() {
-  const res = await fetch('http://localhost:3000/stats');
+  const res = await fetch('https://discord-dashboard-production-92c4.up.railway.app/stats');
   const data = await res.json();
 
   document.querySelector('.cards').innerHTML = `
@@ -11,9 +10,8 @@ async function loadStats() {
   `;
 }
 
-// Fetch member list
 async function loadMembers() {
-  const res = await fetch('http://localhost:3000/members');
+  const res = await fetch('https://discord-dashboard-production-92c4.up.railway.app/members');
   const members = await res.json();
 
   const rows = members.map(m => `
@@ -33,6 +31,5 @@ function sendCommand(command) {
   setTimeout(() => output.textContent = '', 3000);
 }
 
-// Load on page open
 loadStats();
 loadMembers();
